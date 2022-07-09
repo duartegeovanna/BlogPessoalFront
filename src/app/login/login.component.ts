@@ -1,3 +1,4 @@
+import { Token } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
@@ -40,7 +41,7 @@ export class LoginComponent implements OnInit {
 
       this.router.navigate(['/inicio'])
     }, erro =>{
-      if(erro.status == 500){
+      if(erro.status == 401){
         alert('Usuário ou senha estão incorretos')
       }
     })
