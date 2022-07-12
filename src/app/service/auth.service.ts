@@ -21,6 +21,11 @@ export class AuthService {
   login(usuarioLogin: UsuarioLogin): Observable<UsuarioLogin>{
     return this.http.post<UsuarioLogin>('https://gdspring.herokuapp.com/usuarios/logar', usuarioLogin)
   }
+
+  getByIdUser(id: number): Observable<Usuario>{
+    return this.http.get<Usuario>(`https://gdspring.herokuapp.com/usuarios/${id}`)
+  }
+
   
   logado(){
     let ok = false
